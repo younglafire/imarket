@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-obc7p15j($9n2)k70gm96rjv-^erfrj(@mfdtn$@f_xcatwwad
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [  
+    "imarket-production.up.railway.app",
+    "localhost",
+    "127.0.0.1"]
 
 
 # Application definition
