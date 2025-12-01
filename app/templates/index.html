@@ -1,0 +1,403 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMarket - Đàn Guitar & Phụ Kiện Chuyên Nghiệp</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-music-note-beamed"></i> iMarket
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#guitars">Đàn Guitar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#amplifiers">Loa & Ampli</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fuzz">Fuzz Pedals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accessories">Phụ Kiện</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">
+                        <i class="bi bi-search"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light">
+                        <i class="bi bi-bag"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-black text-white d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-1 fw-bold mb-3">iMarket</h1>
+            <p class="lead fs-3 mb-4">Âm Thanh Hoàn Hảo. Phong Cách Chuyên Nghiệp.</p>
+            <p class="text-secondary mb-5">Khám phá bộ sưu tập đàn guitar điện, loa và fuzz pedal cao cấp nhất</p>
+            <div class="hero-buttons">
+                <a href="#guitars" class="btn btn-light btn-lg me-3 px-5">Khám Phá</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-5">Mua Ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product - Guitar Section -->
+    <section id="guitars" class="product-section bg-white py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p class="text-uppercase text-muted mb-2">Mới</p>
+                    <h2 class="display-4 fw-bold text-dark mb-3">Đàn Guitar Điện</h2>
+                    <p class="lead text-secondary mb-4">
+                        Trải nghiệm âm thanh đỉnh cao với bộ sưu tập guitar điện được thiết kế dành cho những nghệ sĩ đích thực.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Từ những giai điệu rock mạnh mẽ đến jazz êm dịu, mỗi cây đàn đều mang đến trải nghiệm âm nhạc tuyệt vời.
+                    </p>
+                    <a href="#" class="btn btn-dark btn-lg">Tìm Hiểu Thêm <i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="product-image-placeholder guitar-placeholder">
+                        <i class="bi bi-music-note-list display-1 text-muted"></i>
+                        <p class="mt-3 text-muted">Hình ảnh Guitar sẽ được thêm vào đây</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guitar Models Grid -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-img-placeholder bg-white d-flex align-items-center justify-content-center">
+                            <i class="bi bi-vinyl display-3 text-muted"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Stratocaster Series</h5>
+                            <p class="card-text text-muted">Âm thanh sáng, rõ ràng. Hoàn hảo cho Blues & Rock.</p>
+                            <p class="fw-bold">Từ 15.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-img-placeholder bg-white d-flex align-items-center justify-content-center">
+                            <i class="bi bi-vinyl display-3 text-muted"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Les Paul Series</h5>
+                            <p class="card-text text-muted">Âm thanh dày, ấm áp. Lý tưởng cho Hard Rock & Metal.</p>
+                            <p class="fw-bold">Từ 18.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-img-placeholder bg-white d-flex align-items-center justify-content-center">
+                            <i class="bi bi-vinyl display-3 text-muted"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Telecaster Series</h5>
+                            <p class="card-text text-muted">Âm thanh twang đặc trưng. Hoàn hảo cho Country & Indie.</p>
+                            <p class="fw-bold">Từ 12.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product - Amplifier Section -->
+    <section id="amplifiers" class="product-section bg-black text-white py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6 order-lg-2 text-center text-lg-start">
+                    <p class="text-uppercase text-secondary mb-2">Công suất vượt trội</p>
+                    <h2 class="display-4 fw-bold mb-3">Loa & Ampli</h2>
+                    <p class="lead text-light mb-4">
+                        Khuếch đại âm thanh guitar của bạn với bộ sưu tập loa và ampli chuyên nghiệp.
+                    </p>
+                    <p class="text-secondary mb-4">
+                        Từ ampli combo nhỏ gọn cho phòng tập đến stack hùng vĩ cho sân khấu lớn.
+                    </p>
+                    <a href="#" class="btn btn-light btn-lg">Khám Phá Ngay <i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-6 order-lg-1 text-center mt-5 mt-lg-0">
+                    <div class="product-image-placeholder amp-placeholder">
+                        <i class="bi bi-speaker display-1"></i>
+                        <p class="mt-3 text-secondary">Hình ảnh Ampli sẽ được thêm vào đây</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amplifier Models Grid -->
+    <section class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card-dark h-100 border-0 bg-black">
+                        <div class="card-img-placeholder-dark d-flex align-items-center justify-content-center">
+                            <i class="bi bi-speaker-fill display-3 text-secondary"></i>
+                        </div>
+                        <div class="card-body text-center text-white">
+                            <h5 class="card-title fw-bold">Tube Amp 50W</h5>
+                            <p class="card-text text-secondary">Âm thanh đèn điện tử vintage ấm áp.</p>
+                            <p class="fw-bold">Từ 25.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card-dark h-100 border-0 bg-black">
+                        <div class="card-img-placeholder-dark d-flex align-items-center justify-content-center">
+                            <i class="bi bi-speaker-fill display-3 text-secondary"></i>
+                        </div>
+                        <div class="card-body text-center text-white">
+                            <h5 class="card-title fw-bold">Solid State 100W</h5>
+                            <p class="card-text text-secondary">Công suất lớn, âm thanh trong trẻo.</p>
+                            <p class="fw-bold">Từ 15.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card-dark h-100 border-0 bg-black">
+                        <div class="card-img-placeholder-dark d-flex align-items-center justify-content-center">
+                            <i class="bi bi-speaker-fill display-3 text-secondary"></i>
+                        </div>
+                        <div class="card-body text-center text-white">
+                            <h5 class="card-title fw-bold">Combo Practice 20W</h5>
+                            <p class="card-text text-secondary">Nhỏ gọn, phù hợp cho phòng tập.</p>
+                            <p class="fw-bold">Từ 5.000.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product - Fuzz Pedals Section -->
+    <section id="fuzz" class="product-section bg-white py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p class="text-uppercase text-muted mb-2">Sáng tạo không giới hạn</p>
+                    <h2 class="display-4 fw-bold text-dark mb-3">Fuzz Pedals</h2>
+                    <p class="lead text-secondary mb-4">
+                        Biến đổi âm thanh guitar của bạn với bộ sưu tập fuzz pedal đa dạng.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Từ fuzz analog vintage đến digital hiện đại, tạo nên âm thanh độc đáo của riêng bạn.
+                    </p>
+                    <a href="#" class="btn btn-dark btn-lg">Xem Tất Cả <i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="product-image-placeholder fuzz-placeholder">
+                        <i class="bi bi-toggles display-1 text-muted"></i>
+                        <p class="mt-3 text-muted">Hình ảnh Fuzz Pedal sẽ được thêm vào đây</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuzz Pedals Grid -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-4">
+                                    <div class="pedal-icon bg-dark text-white rounded d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-lightning-charge display-4"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="card-title fw-bold">Fuzz Analog</h5>
+                                    <p class="card-text text-muted mb-2">Âm thanh fuzz cổ điển, ấm áp với linh kiện analog chất lượng cao.</p>
+                                    <p class="fw-bold mb-0">Từ 2.500.000 VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-4">
+                                    <div class="pedal-icon bg-dark text-white rounded d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-cpu display-4"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="card-title fw-bold">Fuzz Digital</h5>
+                                    <p class="card-text text-muted mb-2">Đa dạng preset, kết nối MIDI, cập nhật firmware dễ dàng.</p>
+                                    <p class="fw-bold mb-0">Từ 3.500.000 VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-4">
+                                    <div class="pedal-icon bg-dark text-white rounded d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-box display-4"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="card-title fw-bold">Fuzz Enclosure</h5>
+                                    <p class="card-text text-muted mb-2">Vỏ nhôm cao cấp, bền bỉ, thiết kế compact cho pedalboard.</p>
+                                    <p class="fw-bold mb-0">Từ 1.800.000 VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-4">
+                                    <div class="pedal-icon bg-dark text-white rounded d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-sliders display-4"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <h5 class="card-title fw-bold">Multi-Effects</h5>
+                                    <p class="card-text text-muted mb-2">Tất cả trong một: fuzz, overdrive, delay và nhiều hơn nữa.</p>
+                                    <p class="fw-bold mb-0">Từ 5.000.000 VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="accessories" class="cta-section bg-black text-white py-5">
+        <div class="container text-center py-5">
+            <h2 class="display-5 fw-bold mb-4">Sẵn Sàng Nâng Cấp Âm Thanh?</h2>
+            <p class="lead text-secondary mb-5">
+                Liên hệ ngay để được tư vấn và trải nghiệm sản phẩm tại showroom của chúng tôi.
+            </p>
+            <div class="row justify-content-center g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="bi bi-truck display-4 mb-3"></i>
+                        <h5 class="fw-bold">Giao Hàng Toàn Quốc</h5>
+                        <p class="text-secondary">Miễn phí ship cho đơn hàng trên 5 triệu</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="bi bi-shield-check display-4 mb-3"></i>
+                        <h5 class="fw-bold">Bảo Hành 24 Tháng</h5>
+                        <p class="text-secondary">Đổi mới trong 30 ngày đầu tiên</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="bi bi-headset display-4 mb-3"></i>
+                        <h5 class="fw-bold">Hỗ Trợ 24/7</h5>
+                        <p class="text-secondary">Đội ngũ tư vấn chuyên nghiệp</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-light btn-lg px-5">Liên Hệ Ngay</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-5 border-top border-secondary">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-music-note-beamed"></i> iMarket</h5>
+                    <p class="text-secondary">
+                        Cửa hàng chuyên cung cấp đàn guitar điện, loa ampli và fuzz pedal chất lượng cao cho nghệ sĩ chuyên nghiệp và người đam mê âm nhạc.
+                    </p>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Sản Phẩm</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#guitars" class="text-secondary text-decoration-none">Đàn Guitar</a></li>
+                        <li><a href="#amplifiers" class="text-secondary text-decoration-none">Loa & Ampli</a></li>
+                        <li><a href="#fuzz" class="text-secondary text-decoration-none">Fuzz Pedals</a></li>
+                        <li><a href="#accessories" class="text-secondary text-decoration-none">Phụ Kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Hỗ Trợ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Hướng Dẫn Mua Hàng</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Chính Sách Đổi Trả</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Bảo Hành</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Liên Hệ</h6>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Đường Âm Nhạc, Quận 1, TP.HCM</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> 0909 123 456</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> contact@imarket.vn</li>
+                    </ul>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-tiktok fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-secondary mb-0">&copy; 2024 iMarket. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-secondary text-decoration-none me-3">Điều Khoản Sử Dụng</a>
+                    <a href="#" class="text-secondary text-decoration-none">Chính Sách Bảo Mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

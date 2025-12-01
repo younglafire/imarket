@@ -1,0 +1,345 @@
+/* iMarket - Custom Styles */
+/* Apple-inspired Black & White Professional Theme */
+
+/* ===== Base Styles ===== */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-light: #f5f5f7;
+    --color-gray: #86868b;
+    --color-gray-dark: #1d1d1f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--color-gray-dark);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Navigation ===== */
+.navbar {
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 8px 16px !important;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+}
+
+.hero-section h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-section .lead {
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.hero-buttons .btn {
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 980px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-light:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Product Sections ===== */
+.product-section {
+    padding: 100px 0;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.product-section h2 {
+    letter-spacing: -1px;
+}
+
+.product-section .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* Product Image Placeholders */
+.product-image-placeholder {
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.guitar-placeholder {
+    background: linear-gradient(145deg, #f5f5f7 0%, #e8e8ed 100%);
+}
+
+.amp-placeholder {
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+.fuzz-placeholder {
+    background: linear-gradient(145deg, #f5f5f7 0%, #e8e8ed 100%);
+}
+
+.product-image-placeholder:hover {
+    transform: scale(1.02);
+}
+
+/* ===== Product Cards ===== */
+.product-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-placeholder {
+    height: 200px;
+    background: var(--color-gray-light);
+}
+
+.product-card-dark {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card-dark:hover {
+    transform: translateY(-8px);
+}
+
+.card-img-placeholder-dark {
+    height: 200px;
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+/* ===== Pedal Icons ===== */
+.pedal-icon {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .pedal-icon {
+    transform: scale(1.1);
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+    background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+}
+
+.feature-box {
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--color-black);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-white) !important;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* ===== Buttons ===== */
+.btn-dark {
+    background-color: var(--color-black);
+    border: none;
+    border-radius: 980px;
+    padding: 14px 28px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: var(--color-gray-dark);
+    transform: scale(1.02);
+}
+
+.btn-light {
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 980px;
+    padding: 14px 28px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: var(--color-gray-light);
+}
+
+.btn-outline-light {
+    border-radius: 980px;
+    border-width: 2px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .product-section {
+        padding: 60px 0;
+    }
+
+    .min-vh-75 {
+        min-height: auto;
+    }
+
+    .product-image-placeholder {
+        height: 300px;
+        margin-top: 40px;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .hero-buttons .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .display-5 {
+        font-size: 1.75rem;
+    }
+
+    .pedal-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .feature-box {
+        padding: 20px;
+    }
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gray);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-dark);
+}
+
+/* ===== Selection ===== */
+::selection {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
