@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{% if query %}{{ query }} - Tìm Kiếm{% else %}Tìm Kiếm{% endif %} | iMarket{% endblock %}
+{% block title %}{% if query %}{{ query|escape }} - Tìm Kiếm{% else %}Tìm Kiếm{% endif %} | iMarket{% endblock %}
 
 {% block content %}
     <!-- Search Hero Section -->
@@ -40,9 +40,9 @@
                 <div class="results-header mb-5">
                     <p class="results-count text-muted">
                         {% if total_results > 0 %}
-                            Tìm thấy <span class="fw-bold text-dark">{{ total_results }}</span> kết quả cho "{{ query }}"
+                            Tìm thấy <span class="fw-bold text-dark">{{ total_results }}</span> kết quả cho "{{ query|escape }}"
                         {% else %}
-                            Không tìm thấy kết quả nào cho "{{ query }}"
+                            Không tìm thấy kết quả nào cho "{{ query|escape }}"
                         {% endif %}
                     </p>
                 </div>

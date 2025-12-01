@@ -42,8 +42,8 @@ def search(request):
             Q(fuzz_type__icontains=query)
         )
     
-    # Calculate total results
-    total_results = len(guitars) + len(amps) + len(fuzzes)
+    # Calculate total results using count() for better performance
+    total_results = guitars.count() + amps.count() + fuzzes.count() if query else 0
     
     context = {
         'query': query,
