@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if query %}{{ query }} - Tìm Kiếm{% else %}Tìm Kiếm{% endif %} | iMarket{% endblock %}
+
+{% block content %}
+    <!-- Search Hero Section -->
+    <section class="search-hero-section bg-black text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="search-title text-center">Tìm Kiếm</h1>
+                    <form class="search-page-form" action="{% url 'search' %}" method="GET">
+                        <div class="search-page-input-wrapper">
+                            <i class="bi bi-search search-page-icon"></i>
+                            <input type="text" 
+                                   name="q" 
+                                   class="search-page-input" 
+                                   placeholder="Tìm kiếm guitar, amplifier, fuzz pedal..." 
+                                   value="{{ query }}"
+                                   autocomplete="off"
+                                   autofocus>
+                            {% if query %}
+                            <a href="{% url 'search' %}" class="search-clear-btn">
+                                <i class="bi bi-x-circle-fill"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section bg-white py-5">
+        <div class="container">
+            {% if query %}
+                <!-- Results Header -->
+                <div class="results-header mb-5">
+                    <p class="results-count text-muted">
+                        {% if total_results > 0 %}
+                            Tìm thấy <span class="fw-bold text-dark">{{ total_results }}</span> kết quả cho "{{ query }}"
+                        {% else %}
+                            Không tìm thấy kết quả nào cho "{{ query }}"
+                        {% endif %}
+                    </p>
+                </div>
+
+                {% if total_results == 0 %}
+                    <!-- No Results -->
+                    <div class="no-results text-center py-5">
+                        <i class="bi bi-search display-1 text-muted mb-4"></i>
+                        <h3 class="fw-bold">Không tìm thấy kết quả</h3>
+                        <p class="text-muted mb-4">Hãy thử tìm kiếm với từ khóa khác</p>
+                        <div class="suggested-searches">
+                            <p class="text-muted mb-3">Gợi ý tìm kiếm:</p>
+                            <div class="d-flex justify-content-center flex-wrap gap-2">
+                                <a href="{% url 'search' %}?q=guitar" class="btn btn-outline-dark btn-sm rounded-pill">Guitar</a>
+                                <a href="{% url 'search' %}?q=stratocaster" class="btn btn-outline-dark btn-sm rounded-pill">Stratocaster</a>
+                                <a href="{% url 'search' %}?q=gibson" class="btn btn-outline-dark btn-sm rounded-pill">Gibson</a>
+                                <a href="{% url 'search' %}?q=telecaster" class="btn btn-outline-dark btn-sm rounded-pill">Telecaster</a>
+                                <a href="{% url 'search' %}?q=amplifier" class="btn btn-outline-dark btn-sm rounded-pill">Amplifier</a>
+                                <a href="{% url 'search' %}?q=fuzz" class="btn btn-outline-dark btn-sm rounded-pill">Fuzz</a>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <!-- Guitar Results -->
+                    {% if guitars %}
+                    <div class="results-category mb-5">
+                        <h2 class="category-title mb-4">
+                            <i class="bi bi-music-note-beamed me-2"></i>Đàn Guitar
+                            <span class="badge bg-dark ms-2">{{ guitars|length }}</span>
+                        </h2>
+                        <div class="row g-4">
+                            {% for guitar in guitars %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card search-result-card h-100 border-0 shadow-sm">
+                                    {% if guitar.image1 %}
+                                    <div class="card-img-wrapper">
+                                        <img src="{{ guitar.image1 }}" alt="{{ guitar.name }}" class="card-img-top">
+                                    </div>
+                                    {% else %}
+                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-music-note-beamed display-4 text-muted"></i>
+                                    </div>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ guitar.brand }}</p>
+                                        <h5 class="card-title fw-bold">{{ guitar.name }}</h5>
+                                        {% if guitar.body_type %}
+                                        <p class="card-text text-muted small mb-2">{{ guitar.body_type }}</p>
+                                        {% endif %}
+                                        <p class="card-price fw-bold">{{ guitar.price|floatformat:0 }} VNĐ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Amplifier Results -->
+                    {% if amps %}
+                    <div class="results-category mb-5">
+                        <h2 class="category-title mb-4">
+                            <i class="bi bi-speaker-fill me-2"></i>Loa & Ampli
+                            <span class="badge bg-dark ms-2">{{ amps|length }}</span>
+                        </h2>
+                        <div class="row g-4">
+                            {% for amp in amps %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card search-result-card h-100 border-0 shadow-sm">
+                                    {% if amp.image1 %}
+                                    <div class="card-img-wrapper">
+                                        <img src="{{ amp.image1 }}" alt="{{ amp.name }}" class="card-img-top">
+                                    </div>
+                                    {% else %}
+                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-speaker-fill display-4 text-muted"></i>
+                                    </div>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ amp.brand }}</p>
+                                        <h5 class="card-title fw-bold">{{ amp.name }}</h5>
+                                        {% if amp.amp_type %}
+                                        <p class="card-text text-muted small mb-2">{{ amp.amp_type }}{% if amp.wattage %} • {{ amp.wattage }}W{% endif %}</p>
+                                        {% endif %}
+                                        <p class="card-price fw-bold">{{ amp.price|floatformat:0 }} VNĐ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Fuzz Pedal Results -->
+                    {% if fuzzes %}
+                    <div class="results-category mb-5">
+                        <h2 class="category-title mb-4">
+                            <i class="bi bi-lightning-fill me-2"></i>Fuzz Pedals
+                            <span class="badge bg-dark ms-2">{{ fuzzes|length }}</span>
+                        </h2>
+                        <div class="row g-4">
+                            {% for fuzz in fuzzes %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card search-result-card h-100 border-0 shadow-sm">
+                                    {% if fuzz.image1 %}
+                                    <div class="card-img-wrapper">
+                                        <img src="{{ fuzz.image1 }}" alt="{{ fuzz.name }}" class="card-img-top">
+                                    </div>
+                                    {% else %}
+                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-lightning-fill display-4 text-muted"></i>
+                                    </div>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ fuzz.brand }}</p>
+                                        <h5 class="card-title fw-bold">{{ fuzz.name }}</h5>
+                                        {% if fuzz.fuzz_type %}
+                                        <p class="card-text text-muted small mb-2">{{ fuzz.fuzz_type }}</p>
+                                        {% endif %}
+                                        <p class="card-price fw-bold">{{ fuzz.price|floatformat:0 }} VNĐ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                <!-- Initial State - No Query -->
+                <div class="search-initial text-center py-5">
+                    <i class="bi bi-search display-1 text-muted mb-4"></i>
+                    <h3 class="fw-bold">Tìm kiếm sản phẩm</h3>
+                    <p class="text-muted mb-4">Nhập từ khóa để tìm kiếm guitar, amplifier, fuzz pedal và nhiều hơn nữa</p>
+                    <div class="quick-searches">
+                        <p class="text-muted mb-3">Tìm kiếm nhanh:</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-2">
+                            <a href="{% url 'search' %}?q=guitar" class="btn btn-outline-dark rounded-pill">
+                                <i class="bi bi-music-note-beamed me-1"></i>Guitar
+                            </a>
+                            <a href="{% url 'search' %}?q=stratocaster+guitar" class="btn btn-outline-dark rounded-pill">Stratocaster</a>
+                            <a href="{% url 'search' %}?q=gibson+les+paul+guitar" class="btn btn-outline-dark rounded-pill">Gibson Les Paul</a>
+                            <a href="{% url 'search' %}?q=telecaster+guitar" class="btn btn-outline-dark rounded-pill">Telecaster</a>
+                            <a href="{% url 'search' %}?q=amplifier" class="btn btn-outline-dark rounded-pill">
+                                <i class="bi bi-speaker-fill me-1"></i>Amplifier
+                            </a>
+                            <a href="{% url 'search' %}?q=fuzz+pedal" class="btn btn-outline-dark rounded-pill">
+                                <i class="bi bi-lightning-fill me-1"></i>Fuzz Pedal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
