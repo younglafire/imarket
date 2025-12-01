@@ -445,24 +445,9 @@ footer a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
-.nav-icon-link .bi {
+.nav-icon-link svg {
     display: inline-block;
-}
-
-.nav-icon-link .icon-fallback {
-    display: none;
-}
-
-/* Show SVG fallback when Bootstrap Icons fail to load */
-.nav-icon-link .bi:empty + .icon-fallback,
-.nav-icon-link .bi:not(.bi-search):not(.bi-bag) + .icon-fallback {
-    display: inline-block;
-}
-
-/* Hide Bootstrap icon text content */
-.bi-search::before,
-.bi-bag::before {
-    content: "" !important;
+    vertical-align: middle;
 }
 
 .navbar-icons {
