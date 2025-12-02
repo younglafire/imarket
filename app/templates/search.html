@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load price_filters %}
 
 {% block title %}{% if query %}{{ query|escape }} - Tìm Kiếm{% else %}Tìm Kiếm{% endif %} | iMarket{% endblock %}
 
@@ -76,25 +77,27 @@
                         <div class="row g-4">
                             {% for guitar in guitars %}
                             <div class="col-md-6 col-lg-4">
-                                <div class="card search-result-card h-100 border-0 shadow-sm">
-                                    {% if guitar.image1 %}
-                                    <div class="card-img-wrapper">
-                                        <img src="{{ guitar.image1 }}" alt="{{ guitar.name }}" class="card-img-top">
-                                    </div>
-                                    {% else %}
-                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-music-note-beamed display-4 text-muted"></i>
-                                    </div>
-                                    {% endif %}
-                                    <div class="card-body">
-                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ guitar.brand }}</p>
-                                        <h5 class="card-title fw-bold">{{ guitar.name }}</h5>
-                                        {% if guitar.body_type %}
-                                        <p class="card-text text-muted small mb-2">{{ guitar.body_type }}</p>
+                                <a href="{% url 'guitar_detail' guitar.id %}" class="text-decoration-none">
+                                    <div class="card search-result-card h-100 border-0 shadow-sm">
+                                        {% if guitar.image1 %}
+                                        <div class="card-img-wrapper">
+                                            <img src="{{ guitar.image1 }}" alt="{{ guitar.name }}" class="card-img-top">
+                                        </div>
+                                        {% else %}
+                                        <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-music-note-beamed display-4 text-muted"></i>
+                                        </div>
                                         {% endif %}
-                                        <p class="card-price fw-bold">{{ guitar.price|floatformat:0 }} VNĐ</p>
+                                        <div class="card-body">
+                                            <p class="card-brand text-muted text-uppercase small mb-1">{{ guitar.brand }}</p>
+                                            <h5 class="card-title fw-bold">{{ guitar.name }}</h5>
+                                            {% if guitar.body_type %}
+                                            <p class="card-text text-muted small mb-2">{{ guitar.body_type }}</p>
+                                            {% endif %}
+                                            <p class="card-price fw-bold">{{ guitar.price|format_vnd }}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             {% endfor %}
                         </div>
@@ -111,25 +114,27 @@
                         <div class="row g-4">
                             {% for amp in amps %}
                             <div class="col-md-6 col-lg-4">
-                                <div class="card search-result-card h-100 border-0 shadow-sm">
-                                    {% if amp.image1 %}
-                                    <div class="card-img-wrapper">
-                                        <img src="{{ amp.image1 }}" alt="{{ amp.name }}" class="card-img-top">
-                                    </div>
-                                    {% else %}
-                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-speaker-fill display-4 text-muted"></i>
-                                    </div>
-                                    {% endif %}
-                                    <div class="card-body">
-                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ amp.brand }}</p>
-                                        <h5 class="card-title fw-bold">{{ amp.name }}</h5>
-                                        {% if amp.amp_type %}
-                                        <p class="card-text text-muted small mb-2">{{ amp.amp_type }}{% if amp.wattage %} • {{ amp.wattage }}W{% endif %}</p>
+                                <a href="{% url 'amp_detail' amp.id %}" class="text-decoration-none">
+                                    <div class="card search-result-card h-100 border-0 shadow-sm">
+                                        {% if amp.image1 %}
+                                        <div class="card-img-wrapper">
+                                            <img src="{{ amp.image1 }}" alt="{{ amp.name }}" class="card-img-top">
+                                        </div>
+                                        {% else %}
+                                        <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-speaker-fill display-4 text-muted"></i>
+                                        </div>
                                         {% endif %}
-                                        <p class="card-price fw-bold">{{ amp.price|floatformat:0 }} VNĐ</p>
+                                        <div class="card-body">
+                                            <p class="card-brand text-muted text-uppercase small mb-1">{{ amp.brand }}</p>
+                                            <h5 class="card-title fw-bold">{{ amp.name }}</h5>
+                                            {% if amp.amp_type %}
+                                            <p class="card-text text-muted small mb-2">{{ amp.amp_type }}{% if amp.wattage %} • {{ amp.wattage }}W{% endif %}</p>
+                                            {% endif %}
+                                            <p class="card-price fw-bold">{{ amp.price|format_vnd }}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             {% endfor %}
                         </div>
@@ -146,25 +151,27 @@
                         <div class="row g-4">
                             {% for fuzz in fuzzes %}
                             <div class="col-md-6 col-lg-4">
-                                <div class="card search-result-card h-100 border-0 shadow-sm">
-                                    {% if fuzz.image1 %}
-                                    <div class="card-img-wrapper">
-                                        <img src="{{ fuzz.image1 }}" alt="{{ fuzz.name }}" class="card-img-top">
-                                    </div>
-                                    {% else %}
-                                    <div class="card-img-placeholder d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-lightning-fill display-4 text-muted"></i>
-                                    </div>
-                                    {% endif %}
-                                    <div class="card-body">
-                                        <p class="card-brand text-muted text-uppercase small mb-1">{{ fuzz.brand }}</p>
-                                        <h5 class="card-title fw-bold">{{ fuzz.name }}</h5>
-                                        {% if fuzz.fuzz_type %}
-                                        <p class="card-text text-muted small mb-2">{{ fuzz.fuzz_type }}</p>
+                                <a href="{% url 'fuzz_detail' fuzz.id %}" class="text-decoration-none">
+                                    <div class="card search-result-card h-100 border-0 shadow-sm">
+                                        {% if fuzz.image1 %}
+                                        <div class="card-img-wrapper">
+                                            <img src="{{ fuzz.image1 }}" alt="{{ fuzz.name }}" class="card-img-top">
+                                        </div>
+                                        {% else %}
+                                        <div class="card-img-placeholder d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-lightning-fill display-4 text-muted"></i>
+                                        </div>
                                         {% endif %}
-                                        <p class="card-price fw-bold">{{ fuzz.price|floatformat:0 }} VNĐ</p>
+                                        <div class="card-body">
+                                            <p class="card-brand text-muted text-uppercase small mb-1">{{ fuzz.brand }}</p>
+                                            <h5 class="card-title fw-bold">{{ fuzz.name }}</h5>
+                                            {% if fuzz.fuzz_type %}
+                                            <p class="card-text text-muted small mb-2">{{ fuzz.fuzz_type }}</p>
+                                            {% endif %}
+                                            <p class="card-price fw-bold">{{ fuzz.price|format_vnd }}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             {% endfor %}
                         </div>

@@ -1,11 +1,41 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Amp, Fuzz, Guitar
 
 
 def index(request):
     return render(request, 'index.html')
+
+
+def guitar_detail(request, pk):
+    """Display detailed information about a specific guitar."""
+    guitar = get_object_or_404(Guitar, pk=pk)
+    return render(request, 'product_detail.html', {
+        'product': guitar,
+        'product_type': 'guitar',
+        'product_type_display': 'Đàn Guitar',
+    })
+
+
+def amp_detail(request, pk):
+    """Display detailed information about a specific amplifier."""
+    amp = get_object_or_404(Amp, pk=pk)
+    return render(request, 'product_detail.html', {
+        'product': amp,
+        'product_type': 'amp',
+        'product_type_display': 'Loa & Ampli',
+    })
+
+
+def fuzz_detail(request, pk):
+    """Display detailed information about a specific fuzz pedal."""
+    fuzz = get_object_or_404(Fuzz, pk=pk)
+    return render(request, 'product_detail.html', {
+        'product': fuzz,
+        'product_type': 'fuzz',
+        'product_type_display': 'Fuzz Pedal',
+    })
 
 
 def search(request):
