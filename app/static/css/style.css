@@ -8,6 +8,7 @@
     --color-gray-light: #f5f5f7;
     --color-gray: #86868b;
     --color-gray-dark: #1d1d1f;
+    --navbar-height: 72px;
 }
 
 * {
@@ -462,7 +463,8 @@ footer a:hover {
 
 /* ===== Search Page Styles ===== */
 .search-hero-section {
-    padding-top: 120px;
+    /* ensure section sits below fixed navbar */
+    padding-top: calc(var(--navbar-height) + 48px);
     padding-bottom: 60px;
     background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
 }
@@ -486,21 +488,23 @@ footer a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 4px;
-    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+    transition: all 0.18s ease;
 }
 
 .search-page-input-wrapper:focus-within {
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .search-page-icon {
     position: absolute;
-    left: 20px;
-    color: var(--color-gray);
+    left: 22px;
+    color: rgba(255,255,255,0.7);
     font-size: 20px;
 }
 
@@ -508,10 +512,11 @@ footer a:hover {
     width: 100%;
     background: transparent;
     border: none;
-    padding: 20px 50px 20px 56px;
+    padding: 18px 54px 18px 56px;
     color: var(--color-white);
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: -0.2px;
 }
 
 .search-page-input::placeholder {
@@ -524,14 +529,28 @@ footer a:hover {
 
 .search-clear-btn {
     position: absolute;
-    right: 20px;
-    color: var(--color-gray);
-    font-size: 20px;
-    transition: color 0.3s ease;
+    right: 18px;
+    color: rgba(255,255,255,0.7);
+    font-size: 18px;
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.12);
 }
 
 .search-clear-btn:hover {
     color: var(--color-white);
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.06);
+}
+
+/* ensure navbar doesn't cover content on pages with fixed navbar */
+body {
+    padding-top: var(--navbar-height);
 }
 
 /* ===== Search Results Styles ===== */
