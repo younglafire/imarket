@@ -16,6 +16,7 @@
                             <i class="bi bi-search search-page-icon"></i>
                             <input type="text" 
                                    name="q" 
+                                   id="search-input"
                                    class="search-page-input" 
                                    placeholder="Tìm kiếm guitar, amplifier, fuzz pedal..." 
                                    value="{{ query }}"
@@ -26,6 +27,10 @@
                                 <i class="bi bi-x-circle-fill"></i>
                             </a>
                             {% endif %}
+                        </div>
+                        <!-- Autocomplete Dropdown -->
+                        <div class="search-autocomplete" id="search-autocomplete">
+                            <div class="autocomplete-results" id="autocomplete-results"></div>
                         </div>
                     </form>
                 </div>
@@ -205,4 +210,155 @@
             {% endif %}
         </div>
     </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const autocompleteContainer = document.getElementById('search-autocomplete');
+    const autocompleteResults = document.getElementById('autocomplete-results');
+    
+    let debounceTimer;
+    let selectedIndex = -1;
+    
+    if (!searchInput || !autocompleteContainer) return;
+    
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        
+        clearTimeout(debounceTimer);
+        
+        if (query.length < 2) {
+            hideAutocomplete();
+            return;
+        }
+        
+        debounceTimer = setTimeout(() => {
+            fetchSuggestions(query);
+        }, 200);
+    });
+    
+    searchInput.addEventListener('keydown', function(e) {
+        const items = autocompleteResults.querySelectorAll('.autocomplete-item');
+        
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+            updateSelection(items);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedIndex = Math.max(selectedIndex - 1, -1);
+            updateSelection(items);
+        } else if (e.key === 'Enter' && selectedIndex >= 0) {
+            e.preventDefault();
+            const selectedItem = items[selectedIndex];
+            if (selectedItem) {
+                window.location.href = selectedItem.getAttribute('href');
+            }
+        } else if (e.key === 'Escape') {
+            hideAutocomplete();
+        }
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!autocompleteContainer.contains(e.target) && e.target !== searchInput) {
+            hideAutocomplete();
+        }
+    });
+    
+    function fetchSuggestions(query) {
+        fetch(`/search/autocomplete/?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.suggestions && data.suggestions.length > 0) {
+                    renderSuggestions(data.suggestions, query);
+                    showAutocomplete();
+                } else {
+                    hideAutocomplete();
+                }
+            })
+            .catch(error => {
+                console.error('Autocomplete error:', error);
+                hideAutocomplete();
+            });
+    }
+    
+    function isValidUrl(url) {
+        // Only allow relative URLs starting with / or https URLs
+        if (!url) return false;
+        if (url.startsWith('/')) return true;
+        try {
+            const parsed = new URL(url);
+            return parsed.protocol === 'https:';
+        } catch {
+            return false;
+        }
+    }
+    
+    function renderSuggestions(suggestions, query) {
+        selectedIndex = -1;
+        autocompleteResults.innerHTML = suggestions.map((item, index) => {
+            const safeUrl = isValidUrl(item.url) ? escapeHtml(item.url) : '#';
+            const safeImage = isValidUrl(item.image) ? escapeHtml(item.image) : '';
+            return `
+            <a href="${safeUrl}" class="autocomplete-item" data-index="${index}">
+                <div class="autocomplete-image">
+                    ${safeImage 
+                        ? `<img src="${safeImage}" alt="${escapeHtml(item.name)}">`
+                        : `<div class="autocomplete-placeholder"><i class="bi bi-${getIcon(item.type)}"></i></div>`
+                    }
+                </div>
+                <div class="autocomplete-content">
+                    <span class="autocomplete-name">${highlightMatch(item.name, query)}</span>
+                    <span class="autocomplete-meta">
+                        <span class="autocomplete-brand">${escapeHtml(item.brand)}</span>
+                        <span class="autocomplete-type">${escapeHtml(item.type_display)}</span>
+                    </span>
+                </div>
+                <i class="bi bi-arrow-right autocomplete-arrow"></i>
+            </a>
+        `}).join('');
+    }
+    
+    function highlightMatch(text, query) {
+        const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+        return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+    }
+    
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    function escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    
+    function getIcon(type) {
+        const icons = {
+            'guitar': 'music-note-beamed',
+            'amp': 'speaker-fill',
+            'fuzz': 'lightning-fill'
+        };
+        return icons[type] || 'box';
+    }
+    
+    function updateSelection(items) {
+        items.forEach((item, index) => {
+            item.classList.toggle('selected', index === selectedIndex);
+        });
+    }
+    
+    function showAutocomplete() {
+        autocompleteContainer.classList.add('show');
+    }
+    
+    function hideAutocomplete() {
+        autocompleteContainer.classList.remove('show');
+        selectedIndex = -1;
+    }
+});
+</script>
 {% endblock %}
