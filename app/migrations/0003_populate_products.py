@@ -15,7 +15,7 @@ def add_products(apps, schema_editor):
     guitars_data = [
         # Stratocaster Series
         {
-            'name': 'American Professional II Stratocaster',
+            'name': 'Guitar American Professional II Stratocaster',
             'brand': 'Fender',
             'price': Decimal('45000000.00'),
             'description': 'Đàn guitar Stratocaster cao cấp với pickup V-Mod II, cần đàn Deep C hiện đại và tremolo 2-Point Tremolo. Âm thanh sáng, trong trẻo, phù hợp cho Blues, Rock và Pop.',
@@ -26,7 +26,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Player Stratocaster HSS',
+            'name': 'Guitar Player Stratocaster HSS',
             'brand': 'Fender',
             'price': Decimal('18500000.00'),
             'description': 'Stratocaster dòng Player với cấu hình HSS linh hoạt. Humbucker ở vị trí bridge cho âm thanh dày hơn, phù hợp cho Rock và Blues hiện đại.',
@@ -37,7 +37,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Vintera 60s Stratocaster',
+            'name': 'Guitar Vintera 60s Stratocaster',
             'brand': 'Fender',
             'price': Decimal('32000000.00'),
             'description': 'Tái hiện âm thanh Strat vintage thập niên 60 với pickup 60s Modified Single-Coil. Cần đàn 60s "C" mềm mại, hoàn hảo cho nhạc Surf và Classic Rock.',
@@ -49,7 +49,7 @@ def add_products(apps, schema_editor):
         },
         # Telecaster Series
         {
-            'name': 'American Professional II Telecaster',
+            'name': 'Guitar American Professional II Telecaster',
             'brand': 'Fender',
             'price': Decimal('42000000.00'),
             'description': 'Telecaster cao cấp với pickup V-Mod II cho âm thanh twang đặc trưng. Cần đàn Deep C thoải mái, phím đàn Super-Natural Satin finish.',
@@ -60,7 +60,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Player Telecaster',
+            'name': 'Guitar Player Telecaster',
             'brand': 'Fender',
             'price': Decimal('17500000.00'),
             'description': 'Telecaster dòng Player với âm thanh Tele cổ điển. Pickup Alnico 5 cho tone sáng và rõ ràng, lý tưởng cho Country, Indie và Alternative Rock.',
@@ -71,7 +71,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Deluxe Telecaster Thinline',
+            'name': 'Guitar Deluxe Telecaster Thinline',
             'brand': 'Fender',
             'price': Decimal('28000000.00'),
             'description': 'Telecaster semi-hollow với âm thanh ấm áp, cộng hưởng tự nhiên. Wide Range humbucker cho tone dày và versatile.',
@@ -83,7 +83,7 @@ def add_products(apps, schema_editor):
         },
         # Gibson / Les Paul Series
         {
-            'name': 'Les Paul Standard 50s',
+            'name': 'Guitar Les Paul Standard 50s',
             'brand': 'Gibson',
             'price': Decimal('65000000.00'),
             'description': 'Les Paul Standard với tái hiện chính xác specs thập niên 50. Burstbucker pickups cho tone vintage ấm áp, thân đàn Mahogany với top Maple AA Figure.',
@@ -94,7 +94,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Les Paul Studio',
+            'name': 'Guitar Les Paul Studio',
             'brand': 'Gibson',
             'price': Decimal('42000000.00'),
             'description': 'Les Paul Studio - âm thanh Les Paul đích thực với giá thành hợp lý. 490R/498T pickups cho tone đa dạng từ Blues đến Hard Rock.',
@@ -105,7 +105,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'SG Standard',
+            'name': 'Guitar SG Standard',
             'brand': 'Gibson',
             'price': Decimal('48000000.00'),
             'description': 'SG Standard với thân đàn nhẹ, cần đàn SlimTaper dễ chơi. 490R/490T pickups cho âm thanh Rock mạnh mẽ, đặc trưng của AC/DC.',
@@ -117,7 +117,7 @@ def add_products(apps, schema_editor):
         },
         # User requested: Mocking Bird
         {
-            'name': 'Mockingbird Extreme',
+            'name': 'Guitar Mockingbird Extreme',
             'brand': 'B.C. Rich',
             'price': Decimal('35000000.00'),
             'description': 'Đàn guitar Mockingbird huyền thoại với thiết kế aggressive độc đáo. Dual humbucker cho tone Metal và Hard Rock cực mạnh, cần đàn nhanh phù hợp cho shred và sweep picking.',
@@ -136,7 +136,7 @@ def add_products(apps, schema_editor):
     amps_data = [
         # User requested: Marshall JCM 800
         {
-            'name': 'JCM800 2203X',
+            'name': 'Amplifier JCM800 2203X',
             'brand': 'Marshall',
             'price': Decimal('75000000.00'),
             'description': 'Huyền thoại Marshall JCM 800 tái bản chính hãng. Công suất 100W đèn điện tử, âm thanh Rock/Metal kinh điển từ thập niên 80. Được sử dụng bởi Slash, Zakk Wylde và hàng nghìn guitar hero.',
@@ -148,7 +148,7 @@ def add_products(apps, schema_editor):
         },
         # Tube Amps
         {
-            'name': 'AC30S1',
+            'name': 'Amplifier AC30S1',
             'brand': 'Vox',
             'price': Decimal('45000000.00'),
             'description': 'Ampli đèn Vox AC30 với âm thanh British chime đặc trưng. 30W công suất, tremolo và reverb tích hợp. Hoàn hảo cho Beatles, Radiohead style.',
@@ -159,7 +159,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Blues Junior IV',
+            'name': 'Amplifier Blues Junior IV',
             'brand': 'Fender',
             'price': Decimal('22000000.00'),
             'description': 'Ampli đèn 15W nhỏ gọn, âm thanh Fender clean ấm áp. Spring reverb cổ điển, phù hợp cho phòng tập và gig nhỏ.',
@@ -170,7 +170,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Dual Rectifier',
+            'name': 'Amplifier Dual Rectifier',
             'brand': 'Mesa Boogie',
             'price': Decimal('85000000.00'),
             'description': 'Ampli đèn 100W huyền thoại cho Metal và Hard Rock. 3 channel độc lập, gain cao, âm thanh heavy đặc trưng.',
@@ -182,7 +182,7 @@ def add_products(apps, schema_editor):
         },
         # Practice Amps
         {
-            'name': 'Katana-50 MkII',
+            'name': 'Amplifier Katana-50 MkII',
             'brand': 'Boss',
             'price': Decimal('8500000.00'),
             'description': 'Ampli combo 50W với công nghệ Tube Logic. 5 amp type, 60+ hiệu ứng BOSS, kết nối Bluetooth và USB recording.',
@@ -193,7 +193,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'THR10II',
+            'name': 'Amplifier THR10II',
             'brand': 'Yamaha',
             'price': Decimal('9500000.00'),
             'description': 'Ampli desktop 20W với thiết kế đẹp mắt. VCM công nghệ mô phỏng ampli analog, hiệu ứng chất lượng cao, loa stereo.',
@@ -204,7 +204,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Spark 40',
+            'name': 'Amplifier Spark 40',
             'brand': 'Positive Grid',
             'price': Decimal('7500000.00'),
             'description': 'Ampli thông minh 40W với AI Jam tự động đệm nhạc. 10,000+ preset từ cộng đồng, Bluetooth streaming và app điều khiển.',
@@ -216,7 +216,7 @@ def add_products(apps, schema_editor):
         },
         # Solid State Amps
         {
-            'name': 'JC-40',
+            'name': 'Amplifier JC-40',
             'brand': 'Roland',
             'price': Decimal('18000000.00'),
             'description': 'Jazz Chorus 40W với âm clean trong vắt huyền thoại. Stereo chorus effect đặc trưng, 2x10" speakers.',
@@ -227,7 +227,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Bandit 112',
+            'name': 'Amplifier Bandit 112',
             'brand': 'Peavey',
             'price': Decimal('12000000.00'),
             'description': 'Ampli solid-state 80W bền bỉ, giá thành hợp lý. TransTube công nghệ cho âm thanh gần tube amp.',
@@ -238,7 +238,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Nextone Stage',
+            'name': 'Amplifier Nextone Stage',
             'brand': 'Boss',
             'price': Decimal('25000000.00'),
             'description': 'Ampli 40W với công nghệ Tube Logic mô phỏng 4 loại power tube. Kết nối GA-FC footswitch, Air Feel cho cảm giác như ampli đèn.',
@@ -257,7 +257,7 @@ def add_products(apps, schema_editor):
     fuzzes_data = [
         # Analog Fuzz
         {
-            'name': 'Big Muff Pi',
+            'name': 'Fuzz Big Muff Pi',
             'brand': 'Electro-Harmonix',
             'price': Decimal('2800000.00'),
             'description': 'Fuzz pedal huyền thoại với âm sustain dày, mạnh mẽ. Sử dụng bởi Jimi Hendrix, David Gilmour. Tone và Sustain controls.',
@@ -277,7 +277,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Hoof Fuzz',
+            'name': 'Fuzz Hoof',
             'brand': 'EarthQuaker Devices',
             'price': Decimal('5500000.00'),
             'description': 'Fuzz germanium/silicon hybrid với shift control độc đáo. Từ fuzz nhẹ đến doom metal crushing. Handmade in USA.',
@@ -288,7 +288,7 @@ def add_products(apps, schema_editor):
         },
         # Digital Fuzz
         {
-            'name': 'MultiStomp MS-70CDR',
+            'name': 'Fuzz MultiStomp MS-70CDR',
             'brand': 'Zoom',
             'price': Decimal('3500000.00'),
             'description': 'Multi-effect digital với 86 chorus/delay/reverb + fuzz effects. Nhỏ gọn, chạy pin, USB editor. Chất lượng studio.',
@@ -298,7 +298,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Plasma Pedal',
+            'name': 'Fuzz Plasma Pedal',
             'brand': 'Gamechanger Audio',
             'price': Decimal('8500000.00'),
             'description': 'Fuzz digital độc đáo sử dụng xenon tube. Âm thanh aggressive, voltage-controlled distortion, LED hiển thị plasma thực.',
@@ -308,7 +308,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Source Audio Aftershock',
+            'name': 'Fuzz Source Audio Aftershock',
             'brand': 'Source Audio',
             'price': Decimal('6500000.00'),
             'description': 'Fuzz/distortion digital với 24 engines, MIDI control, stereo I/O. Neuro app editor, preset save, expression pedal input.',
@@ -329,7 +329,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Model feT',
+            'name': 'Fuzz Model feT',
             'brand': 'Fairfield Circuitry',
             'price': Decimal('6000000.00'),
             'description': 'Fuzz/drive boutique với gain range rộng. Compact enclosure aluminum cao cấp, handmade in Canada. Clean boost đến woolly fuzz.',
@@ -339,7 +339,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Pharaoh Supreme',
+            'name': 'Fuzz Pharaoh Supreme',
             'brand': 'Black Arts Toneworks',
             'price': Decimal('5800000.00'),
             'description': 'Fuzz/doom pedal với high gain và massive sustain. Enclosure chất lượng cao, true bypass, germanium diodes option.',
@@ -350,7 +350,7 @@ def add_products(apps, schema_editor):
         },
         # Multi-Effect
         {
-            'name': 'GT-1000',
+            'name': 'Fuzz GT-1000',
             'brand': 'Boss',
             'price': Decimal('22000000.00'),
             'description': 'Multi-effect flagship với AIRD công nghệ. 116 effects, stereo I/O, Bluetooth editor, USB audio interface. Tour-ready quality.',
@@ -360,7 +360,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'Helix Floor',
+            'name': 'Fuzz Helix Floor',
             'brand': 'Line 6',
             'price': Decimal('38000000.00'),
             'description': 'Multi-effect cao cấp với amp/cab modeling chất lượng studio. Touchscreen, expression pedals, XLR outputs. Giải pháp all-in-one.',
@@ -370,7 +370,7 @@ def add_products(apps, schema_editor):
             'image3': '',
         },
         {
-            'name': 'HX Stomp',
+            'name': 'Fuzz HX Stomp',
             'brand': 'Line 6',
             'price': Decimal('18500000.00'),
             'description': 'Helix nhỏ gọn trong enclosure compact. 300+ effects, amp/cab models, stereo I/O. USB audio, MIDI, expression input.',
@@ -393,46 +393,46 @@ def remove_products(apps, schema_editor):
     
     # Remove products by name (to avoid deleting user-added products)
     guitar_names = [
-        'American Professional II Stratocaster',
-        'Player Stratocaster HSS',
-        'Vintera 60s Stratocaster',
-        'American Professional II Telecaster',
-        'Player Telecaster',
-        'Deluxe Telecaster Thinline',
-        'Les Paul Standard 50s',
-        'Les Paul Studio',
-        'SG Standard',
-        'Mockingbird Extreme',
+        'Guitar American Professional II Stratocaster',
+        'Guitar Player Stratocaster HSS',
+        'Guitar Vintera 60s Stratocaster',
+        'Guitar American Professional II Telecaster',
+        'Guitar Player Telecaster',
+        'Guitar Deluxe Telecaster Thinline',
+        'Guitar Les Paul Standard 50s',
+        'Guitar Les Paul Studio',
+        'Guitar SG Standard',
+        'Guitar Mockingbird Extreme',
     ]
     Guitar.objects.filter(name__in=guitar_names).delete()
     
     amp_names = [
-        'JCM800 2203X',
-        'AC30S1',
-        'Blues Junior IV',
-        'Dual Rectifier',
-        'Katana-50 MkII',
-        'THR10II',
-        'Spark 40',
-        'JC-40',
-        'Bandit 112',
-        'Nextone Stage',
+        'Amplifier JCM800 2203X',
+        'Amplifier AC30S1',
+        'Amplifier Blues Junior IV',
+        'Amplifier Dual Rectifier',
+        'Amplifier Katana-50 MkII',
+        'Amplifier THR10II',
+        'Amplifier Spark 40',
+        'Amplifier JC-40',
+        'Amplifier Bandit 112',
+        'Amplifier Nextone Stage',
     ]
     Amp.objects.filter(name__in=amp_names).delete()
     
     fuzz_names = [
-        'Big Muff Pi',
+        'Fuzz Big Muff Pi',
         'Fuzz Face Mini Germanium',
-        'Hoof Fuzz',
-        'MultiStomp MS-70CDR',
-        'Plasma Pedal',
-        'Source Audio Aftershock',
+        'Fuzz Hoof',
+        'Fuzz MultiStomp MS-70CDR',
+        'Fuzz Plasma Pedal',
+        'Fuzz Source Audio Aftershock',
         'Fuzz Factory',
-        'Model feT',
-        'Pharaoh Supreme',
-        'GT-1000',
-        'Helix Floor',
-        'HX Stomp',
+        'Fuzz Model feT',
+        'Fuzz Pharaoh Supreme',
+        'Fuzz GT-1000',
+        'Fuzz Helix Floor',
+        'Fuzz HX Stomp',
     ]
     Fuzz.objects.filter(name__in=fuzz_names).delete()
 
