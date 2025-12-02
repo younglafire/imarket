@@ -46,11 +46,13 @@ def search_autocomplete(request):
     suggestions = []
     
     if query and len(query) >= 2:
-        # Search in Guitar model
+        # Search in Guitar model (include type fields)
         guitars = Guitar.objects.filter(
             Q(name__icontains=query) |
             Q(brand__icontains=query) |
-            Q(description__icontains=query)
+            Q(description__icontains=query) |
+            Q(body_type__icontains=query) |
+            Q(pickup_configuration__icontains=query)
         )[:3]
         
         for guitar in guitars:
@@ -64,11 +66,12 @@ def search_autocomplete(request):
                 'url': reverse('guitar_detail', kwargs={'pk': guitar.id}),
             })
         
-        # Search in Amp model
+        # Search in Amp model (include amp_type)
         amps = Amp.objects.filter(
             Q(name__icontains=query) |
             Q(brand__icontains=query) |
-            Q(description__icontains=query)
+            Q(description__icontains=query) |
+            Q(amp_type__icontains=query)
         )[:3]
         
         for amp in amps:
@@ -82,11 +85,12 @@ def search_autocomplete(request):
                 'url': reverse('amp_detail', kwargs={'pk': amp.id}),
             })
         
-        # Search in Fuzz model
+        # Search in Fuzz model (include fuzz_type)
         fuzzes = Fuzz.objects.filter(
             Q(name__icontains=query) |
             Q(brand__icontains=query) |
-            Q(description__icontains=query)
+            Q(description__icontains=query) |
+            Q(fuzz_type__icontains=query)
         )[:3]
         
         for fuzz in fuzzes:
