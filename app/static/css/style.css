@@ -851,6 +851,32 @@ body {
     position: relative;
 }
 
+/* Ensure any cart toggle (mobile or desktop) is a positioned container
+   so the absolute-positioned badge (.cart-count) anchors to the icon
+   instead of another nearby element like the navbar-toggler. */
+.cart-toggle {
+    position: relative;
+    z-index: 1060;
+}
+
+/* Mobile-specific placement tweaks so the badge sits on the cart icon
+   and not over the navbar toggler (hamburger). */
+@media (max-width: 991.98px) {
+    .d-flex.align-items-center.d-lg-none {
+        margin-right: 1rem; /* give more space between icons and toggler */
+    }
+
+    .d-flex.align-items-center.d-lg-none .cart-count {
+        top: -6px;
+        right: -2px;
+    }
+
+    /* ensure toggler is under the mobile icons */
+    .navbar-toggler {
+        z-index: 1050;
+    }
+}
+
 .cart-count {
     position: absolute;
     top: -4px;
