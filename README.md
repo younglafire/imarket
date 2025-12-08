@@ -9,9 +9,18 @@ Cửa hàng trực tuyến chuyên cung cấp đàn guitar điện, loa ampli v�
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-purple?logo=bootstrap)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 📸 Screenshots
+
+### Trang Chủ
+![iMarket Homepage](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+
+*Giao diện trang chủ với hero section và danh mục sản phẩm*
+
 ## 📑 Mục Lục
 
+- [Screenshots](#-screenshots)
 - [Tính Năng](#-tính-năng)
+- [Kiến Trúc Hệ Thống](#-kiến-trúc-hệ-thống)
 - [Demo](#-demo)
 - [Công Nghệ](#-công-nghệ)
 - [Cài Đặt](#-cài-đặt)
@@ -42,6 +51,67 @@ Cửa hàng trực tuyến chuyên cung cấp đàn guitar điện, loa ampli v�
 - Thiết kế responsive, tương thích mọi thiết bị
 - Giao diện hiện đại, lấy cảm hứng từ Apple
 - Hỗ trợ tiếng Việt
+
+## 🏗 Kiến Trúc Hệ Thống
+
+```mermaid
+graph TB
+    subgraph Client["🖥️ Client Browser"]
+        UI[Bootstrap 5 UI]
+        JS[JavaScript Cart/Search]
+    end
+
+    subgraph Django["🐍 Django Application"]
+        URLs[URL Router]
+        Views[Views Layer]
+        Templates[Django Templates]
+        Models[Models Layer]
+        Admin[Django Admin]
+    end
+
+    subgraph Database["💾 Database"]
+        SQLite[(SQLite DB)]
+    end
+
+    subgraph Products["📦 Product Models"]
+        Guitar[Guitar Model]
+        Amp[Amplifier Model]
+        Fuzz[Fuzz Pedal Model]
+    end
+
+    UI --> URLs
+    JS --> URLs
+    URLs --> Views
+    Views --> Templates
+    Views --> Models
+    Admin --> Models
+    Models --> SQLite
+    Models --> Products
+```
+
+### Luồng Xử Lý Request
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant B as Browser
+    participant D as Django
+    participant DB as SQLite
+
+    U->>B: Truy cập trang
+    B->>D: HTTP Request
+    D->>DB: Query Products
+    DB-->>D: Product Data
+    D-->>B: HTML Response
+    B-->>U: Hiển thị trang
+
+    U->>B: Tìm kiếm sản phẩm
+    B->>D: GET /search/?q=...
+    D->>DB: Search Query
+    DB-->>D: Search Results
+    D-->>B: Search Results HTML
+    B-->>U: Hiển thị kết quả
+```
 
 ## 🌐 Demo
 
