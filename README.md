@@ -14,7 +14,17 @@ Cửa hàng trực tuyến chuyên cung cấp đàn guitar điện, loa ampli v�
 ### Trang Chủ
 ![iMarket Homepage](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
 
-*Giao diện trang chủ với hero section và danh mục sản phẩm*
+*Giao diện trang chủ với hero section, danh mục sản phẩm (Đàn Guitar, Loa & Ampli, Fuzz Pedals) và các tính năng nổi bật*
+
+### Trang Tìm Kiếm
+![Search Page](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+
+*Tìm kiếm sản phẩm với autocomplete, hiển thị kết quả theo danh mục (Guitars, Amps, Fuzz Pedals)*
+
+### Chi Tiết Sản Phẩm - Gibson SG Standard
+![Product Detail - Gibson SG](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+
+*Trang chi tiết sản phẩm Gibson SG Standard: ảnh sản phẩm, thông số kỹ thuật, mô tả, nút thêm vào giỏ hàng*
 
 ## 📑 Mục Lục
 
