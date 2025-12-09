@@ -12,19 +12,19 @@ Cửa hàng trực tuyến chuyên cung cấp đàn guitar điện, loa ampli v�
 ## 📸 Screenshots
 
 ### Trang Chủ
-![iMarket Homepage](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+![iMarket Homepage](docs/images/homepage.png)
 
 *Giao diện trang chủ với hero section, danh mục sản phẩm (Đàn Guitar, Loa & Ampli, Fuzz Pedals) và các tính năng nổi bật*
 
 ### Trang Tìm Kiếm
-![Search Page](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+![Search Page - Gibson Guitars](docs/images/search-gibson.png)
 
-*Tìm kiếm sản phẩm với autocomplete, hiển thị kết quả theo danh mục (Guitars, Amps, Fuzz Pedals)*
+*Tìm kiếm sản phẩm Gibson với autocomplete, hiển thị 3 kết quả: SG Standard, Les Paul Studio, Les Paul Standard 50s*
 
 ### Chi Tiết Sản Phẩm - Gibson SG Standard
-![Product Detail - Gibson SG](https://github.com/user-attachments/assets/4b49d611-1c30-4e02-ba63-cd6bd0591fd3)
+![Product Detail - Gibson SG Standard](docs/images/product-gibson-sg.png)
 
-*Trang chi tiết sản phẩm Gibson SG Standard: ảnh sản phẩm, thông số kỹ thuật, mô tả, nút thêm vào giỏ hàng*
+*Trang chi tiết Gibson SG Standard: gallery ảnh sản phẩm, thông số kỹ thuật (Solid Body, HH pickups), mô tả sản phẩm, và nút thêm vào giỏ hàng*
 
 ## 📑 Mục Lục
 
